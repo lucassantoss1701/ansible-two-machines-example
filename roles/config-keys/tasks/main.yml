@@ -1,0 +1,13 @@
+---
+- name: Generate SSH key pair
+  command: ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa -N ""
+  register: ssh_keygen_output
+  ignore_errors: yes
+
+- name: Copy SSH public key to node1 with custom SSH port
+  command: ssh-copy-id root@node1
+  ignore_errors: yes
+
+- name: Copy SSH public key to node2 with custom SSH port
+  command: ssh-copy-id root@node2
+  ignore_errors: yes

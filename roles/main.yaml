@@ -1,0 +1,13 @@
+---
+- hosts: local
+  remote_user: root
+  become: yes
+  roles:
+    - config-keys
+
+- hosts: nodes
+  remote_user: root
+  become: yes
+  roles:
+    - install-nginx
+

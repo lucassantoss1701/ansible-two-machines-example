@@ -1,0 +1,9 @@
+[local]
+localhost ansible_connection=local
+
+[nodes]
+node1
+node2
+
+[all:vars]
+ansible_user=root
